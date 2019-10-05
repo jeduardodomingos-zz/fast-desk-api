@@ -1,9 +1,7 @@
-'use-strict';
-
 const Sequelize = require('sequelize');
 const database = require('../../config/database.js');
 
-const Profile = Sequelize.define('FDSK_USER_PROFILES', {
+const Profile = database.define('FDSK_USER_PROFILES', {
     id: {
         allowNull: false,
         autoIncremnt: true,

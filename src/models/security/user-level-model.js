@@ -1,9 +1,7 @@
-'use-strict';
-
 const Sequelize = require('sequelize');
 const database = require('../../config/database.js');
 
-const Level = Sequelize.define('FDSK_USER_LEVELS', {
+const Level = database.define('FDSK_USER_LEVELS', {
     id: {
         allowNull: false,
         autoIncremnt: true,

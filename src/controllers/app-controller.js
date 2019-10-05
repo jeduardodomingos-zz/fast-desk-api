@@ -7,4 +7,4 @@ exports.index = (req, res, next) => {
         owner: 'Juan Eduardo Domingos',
         version: '1.0.0'
     });
-}
+};

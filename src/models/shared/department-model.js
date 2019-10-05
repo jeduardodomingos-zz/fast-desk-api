@@ -1,9 +1,7 @@
-'use strict';
-
 const Sequelize = require('sequelize');
 const database = require('../../config/database.js');
 
-const Department = database.define('FDSK', {
+const Department = database.define('FDSK_DEPARTMENTS', {
     id: {
         allowNull: false,
         autoIncremnt: true,

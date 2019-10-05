@@ -1,8 +1,7 @@
-'use strict';
-
 const Sequelize = require('sequelize');
 const Department = require('../shared/department-model.js');
 const Level = require('./user-level-model.js');
+const Profile = require('./user-profile.model.js');
 const database = require('../../config/database.js');
 
 const User = database.define('FDSK_USERS', {
@@ -57,27 +56,39 @@ const User = database.define('FDSK_USERS', {
         type: Sequelize.DATE
     },
     lastUpdatedBy: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.INTEGER
     },
     lastUpdateDate: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE
     },
     lastPasswordUpdate: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE
     }
 });
 
-User.belongsTo(Department, {
+User.Department = User.belongsTo(Department, {
     as: 'department',
+    foreignKey: 'departmentId',
+    targetKey: 'id',
     allowNull: false
 });
 
-User.belongsTo(Level, {
+User.Level = User.belongsTo(Level, {
     as: 'level',
+    foreignKey: 'levelId',
+    targetKey: 'id',
     allowNull: false
 });
+
+User.Profile = User.belongsTo(Profile, {
+    as: 'profile',
+    foreignKey: 'profileId',
+    targetKey: 'id',
+    allowNull: false
+});
+
 
 module.exports = User;
