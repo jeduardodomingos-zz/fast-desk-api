@@ -4,9 +4,9 @@ const database = require('../../config/database.js');
 const Level = database.define('FDSK_USER_LEVELS', {
     id: {
         allowNull: false,
-        autoIncremnt: true,
+        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.BIGINT
     },
     initials: {
         allowNull: false,
@@ -33,11 +33,11 @@ const Level = database.define('FDSK_USER_LEVELS', {
         type: Sequelize.DATE
     },
     lastUpdatedBy: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.INTEGER
     },
     lastUpdateDate: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE
     }
 });

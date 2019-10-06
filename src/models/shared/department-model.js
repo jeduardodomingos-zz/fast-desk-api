@@ -4,9 +4,9 @@ const database = require('../../config/database.js');
 const Department = database.define('FDSK_DEPARTMENTS', {
     id: {
         allowNull: false,
-        autoIncremnt: true,
+        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.BIGINT
     },
     initials: {
         allowNull: false,
@@ -29,11 +29,11 @@ const Department = database.define('FDSK_DEPARTMENTS', {
         type: Sequelize.DATE
     },
     lastUpdatedBy: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.INTEGER
     },
     lastUpdateDate: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE
     }
 });
