@@ -24,7 +24,7 @@ exports.putDepartment = (req, res, next) => {
 
             findDepartment.update(departmentData)
                 .then(() => {
-                    res.status(201).send({ message: "Department updated with success.", messageCode: 201 });
+                    res.status(200).send({ message: "Department updated with success.", messageCode: 200 });
                 })
                 .catch((error) => {
                     next(error);

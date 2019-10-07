@@ -4,9 +4,17 @@ const database = require('../../config/database.js');
 const Profile = database.define('FDSK_USER_PROFILES', {
     id: {
         allowNull: false,
-        autoIncremnt: true,
+        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.BIGINT
+    },
+    name: {
+        allowNull: false,
+        type: Sequelize.STRING(500)
+    },
+    initials: {
+        allowNull: false,
+        type: Sequelize.STRING(10)
     },
     status: {
         allowNull: false,
@@ -21,11 +29,11 @@ const Profile = database.define('FDSK_USER_PROFILES', {
         type: Sequelize.DATE
     },
     lastUpdatedBy: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.INTEGER
     },
     lastUpdateDate: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE
     }
 });

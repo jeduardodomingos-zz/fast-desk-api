@@ -7,9 +7,9 @@ const database = require('../../config/database.js');
 const User = database.define('FDSK_USERS', {
     id: {
         allowNull: false,
-        autoIncremnt: true,
+        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.BIGINT
     },
     name: {
         allowNull: false,
