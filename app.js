@@ -27,7 +27,7 @@ app.use((error, req, res, next) => {
     res.status(500).json({ error });
 });
 
-database.sync({ force: true }).then(() => {
+database.sync({ force: false }).then(() => {
     const server = http.createServer(app);
 
     app.set("port", port);
