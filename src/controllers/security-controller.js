@@ -23,7 +23,7 @@ exports.putUser = (req, res, next) => {
     User.findOne(
         {
             where: {
-                id: Number(req.body.id)
+                id: (req.body.id == undefined ? 0 : req.body.id)
             }
         }
     ).then((user) => {
@@ -62,7 +62,7 @@ exports.putUserLevel = (req, res, next) => {
     UserLevel.findOne(
         {
             where: {
-                id: Number(req.body.id)
+                id: (req.body.id == undefined ? 0 : req.body.id)
             }
         }
     ).then((userLevel) => {
@@ -102,7 +102,7 @@ exports.putUserProfile = (req, res, next) => {
         {
             where:
             {
-                id: Number(req.body.id)
+                id: (req.body.id == undefined ? 0 : req.body.id)
             }
         }
     ).then((userProfile) => {

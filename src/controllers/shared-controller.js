@@ -4,16 +4,19 @@ const Department = require('../models/shared/department-model.js');
 
 exports.putDepartment = (req, res, next) => {
 
+    console.log('test')
+
     const departmentData = {
         initials: req.body.initials,
         name: req.body.name,
-        status: req.body.status
+        status: req.body.status,
+        createdBy: req.body.createdBy
     };
 
     Department.findOne(
         {
             where: {
-                id: req.body.id
+                id: (req.body.id == undefined ? 0 : req.body.id) 
             }
         }
     ).then((findDepartment) => {
@@ -43,6 +46,7 @@ exports.putDepartment = (req, res, next) => {
                     });
         }
     }).catch((error) => {
+        console.log(error);
         next(error);
     });
 };
