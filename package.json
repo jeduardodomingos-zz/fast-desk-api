@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
+    "start": "node -r dotenv/config %npm_package_main%",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,7 +17,9 @@
     "mysql2": "^1.7.0",
     "sequelize": "^5.21.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/sequelize": "^4.28.6"
+  },
   "description": "API para o sistema de chamados FastDesk",
   "repository": {
     "type": "git",

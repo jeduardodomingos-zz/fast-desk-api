@@ -22,10 +22,10 @@ app.use("/api", appRoute);
 app.use("/api", userRoute);
 app.use("/api", sharedRoute);
 
-
 app.use((error, req, res, next) => {
     res.status(500).json({ error });
 });
+
 
 database.sync({ force: false }).then(() => {
     const server = http.createServer(app);
