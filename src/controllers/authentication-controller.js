@@ -14,7 +14,7 @@ exports.login = (req, res, next) => {
     ).then((user) => {
         if (user) {
             jwt.sign({ user: user }, process.env.SECRET, { expiresIn: process.env.TOKEN_VALID_TIME }, (error, token) => {
-                res.status(200).send({ user: user, token: token });
+                res.status(200).send({ user: {id: user.id, name: user.name, surname: user.surname, email: user.email, bornDate: user.birth}, token: token });
             });
         } else {
             res.status(401).send({ message: "User Unauthorized", messageCode: 401 });
